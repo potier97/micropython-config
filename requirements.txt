@@ -1,2 +1,5 @@
 esptool
 setuptools
+pyserial
+mpfshell
+adafruit-ampy

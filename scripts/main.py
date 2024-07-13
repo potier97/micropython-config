@@ -1,8 +1,13 @@
 import machine
 import time
 
-led = machine.Pin(2, machine.Pin.OUT)
+led = machine.Pin(5, machine.Pin.OUT)
+print("Hola, ESP32!")
 
 while True:
     led.value(not led.value())
-    time.sleep(1)
+    time.sleep(2)
+
+
+
+
