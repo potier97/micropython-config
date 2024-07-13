@@ -1,3 +1,7 @@
+<p align="center">
+  <a href="http://nipoanz.com/" target="blank"><img src="./assets/image-6.png" width="300" alt="NPA Logo" /></a>
+</p>
+
 # Micropython config with Esp32 Project
 
 Este proyecto está diseñado para configurar de manera rápida y sencilla un ESP32 con MicroPython.
@@ -8,7 +12,7 @@ Este proyecto está diseñado para configurar de manera rápida y sencilla un ES
 - `esptool` para flashear el firmware de MicroPython
 - Firmware de MicroPython para ESP32
 
-## Install
+## Instalar
 
 1. Clonar el repositorio:
     ```sh
@@ -52,7 +56,11 @@ COM3: Silicon Labs CP210x USB to UART Bridge (COM3)
 
 Para descargar el firmware de MicroPython visitar el siguiente enlace oficial de [Micropython](https://micropython.org/download/?port=esp32), para este proyecto nos enfocaremos en el ESP32 con la versión WROOM.
 
-![Alt text](assets/image.png)
+<br>
+<p align="center">
+  <a href="http://nipoanz.com/" target="blank"><img src="./assets/image.png" width="300" alt="image" /></a>
+</p>
+<br>
 
 
 > En este proyecto descargamos el  Firmware más reciente hasta la fecha de este tutorial `12/08/2024`, por lo cual se descargó el archivo `esp32-idf4-20200812-v1.12.bin`,  y este se encuentra ubicado en la carpeta `firmware` del proyecto. 
@@ -75,8 +83,12 @@ Connecting...................
 ```
 
 Por lo que deberá presionar el botón de `BOOT` del ESP32 para que se limpie la memoria flash.	
-
-![Alt text](assets/image-1.png)
+ 
+<br>
+<p align="center">
+  <a href="http://nipoanz.com/" target="blank"><img src="./assets/image-1.png" width="300" alt="image-1" /></a>
+</p>
+<br>
 
  > El mensaje anterior indica que su EPS32 esta no está en modo `Flash`
 
@@ -101,17 +113,28 @@ py ./tools/flash.py <ruta_al_firmware> [--erase]
 Para conectarse al REPL del ESP32, se connecta por medio de `PUTTY`debido a que este proyecto se ejecuta en un sistema operativo Windows. Debe validar el puerto en el que se encuentra conectado el ESP32, y luego si hacer una conexión serial con el puerto y una velocidad de 115200 baudios.
 
 **Detectar Puertos**
-![Alt text](assets/image-2.png)
+<p align="center">
+  <a href="http://nipoanz.com/" target="blank"><img src="./assets/image-2.png"  alt="image-2" /></a>
+</p>
+<br>
 
 **Conexión Serial con Putty**
-![Alt text](assets/image-3.png)
+<p align="center">
+  <a href="http://nipoanz.com/" target="blank"><img src="./assets/image-3.png" width="300" alt="image-3" /></a>
+</p>
+<br>
 
 **Ejemplo de Conexión**
-
-![Alt text](assets/image-4.png)
+<p align="center">
+  <a href="http://nipoanz.com/" target="blank"><img src="./assets/image-4.png" width="300" alt="image-4" /></a>
+</p>
+<br>
 
 **Dispositivo**
-![Alt text](assets/image-5.png)
+<p align="center">
+  <a href="http://nipoanz.com/" target="blank"><img src="./assets/image-5.png" width="300" alt="image-5" /></a>
+</p>
+<br>
 
 > Vea este video para más información [Video](https://www.youtube.com/watch?v=ws08aYb6EPI&t=241s&ab_channel=RealPython) del Canal de Youtube de RealPython.
 
