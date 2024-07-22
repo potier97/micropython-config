@@ -3,23 +3,17 @@ from machine import Pin, SPI
 from time import sleep
 
 # Inicializa el LED
-led = Pin(16, Pin.OUT)  # Cambia el pin según tu configuración
+led = Pin(16, Pin.OUT)
 
 # # Configuración del lector RFID
 sck = Pin(14, Pin.OUT)
 mosi = Pin(13, Pin.OUT)
 miso = Pin(12, Pin.IN)
-#sda = Pin(4, Pin.OUT)
-
 
 print("Escanea una tarjeta RFID...")
 
-#spi = SPI(1, baudrate=1000000, polarity=0, phase=0, sck=sck, mosi=mosi, miso=miso)
-#rdr = mfrc522.MFRC522(spi, sda)
-
 # Función para leer la tarjeta y obtener el UID
 def read_rfid():
-    #spi = SPI(1, baudrate=1000000, polarity=0, phase=0)
     spi = SPI(baudrate=100000, polarity=0, phase=0, sck=sck, mosi=mosi, miso=miso)
     spi.init()
     rdr = mfrc522.MFRC522(spi, gpioRst=5, gpioCs=4)
