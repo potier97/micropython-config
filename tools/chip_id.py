@@ -1,8 +1,18 @@
 import subprocess
 from ports import detect_ports
-from chip_id import detect_chip
 
-def erase_flash():
+def detect_chip(port):
+    chip_info_cmd = f"esptool --port {port} chip_id"
+    result = subprocess.run(chip_info_cmd, shell=True, capture_output=True, text=True)
+
+    if "Chip is ESP8266" in result.stdout:
+        return "esp8266"
+    elif "Chip is ESP32" in result.stdout:
+        return "esp32"
+    else:
+        return None
+
+def read_mac():
     ports = detect_ports()
     if not ports:
         print("No se encontraron puertos disponibles.")
@@ -17,10 +27,6 @@ def erase_flash():
         return
 
     print(f"Tipo de chip detectado: {chip_type}")
-    erase_flash_cmd = f"esptool --chip {chip_type} --port {port} erase_flash"
-
-    subprocess.run(erase_flash_cmd, shell=True, check=True)
-    print("Flash borrado exitosamente.")
 
 if __name__ == "__main__":
-    erase_flash()
+    read_mac()
