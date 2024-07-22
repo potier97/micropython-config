@@ -24,7 +24,7 @@ def flash_esp32(erase=False):
         write_flash_cmd = f"esptool --chip {chip_type} --port {port} --baud 460800 write_flash -z 0x1000 ./firmware(ESP32_GENERIC-20240602-v1.23.0.bin"
     elif chip_type == "esp8266":
         print("Flasheando ESP8266...")
-        write_flash_cmd = f"esptool --chip {chip_type} --port {port} --baud 460800 write_flash --flash_size=detect 0 ./firmware/ESP8266_GENERIC-20180511-v1.9.4.bin"
+        write_flash_cmd = f"esptool --chip {chip_type} --port {port} --baud 460800 write_flash --flash_freq 40m --flash_mode dio --flash_size detect 0  ./firmware/ESP8266_GENERIC-20180511-v1.9.4.bin"
     else:
         print("Tipo de chip no soportado.")
         return
@@ -34,7 +34,6 @@ def flash_esp32(erase=False):
         subprocess.run(erase_flash_cmd, shell=True, check=True)
         print("Flash borrado exitosamente.")
 
-    #write_flash_cmd = f"esptool --chip {chip_type} --port {port} --baud 460800 write_flash -z 0x1000 {firmware_path}"
     print(f"Comando de flasheo: {write_flash_cmd}")
     subprocess.run(write_flash_cmd, shell=True, check=True)
     print("Flasheo completado.")
